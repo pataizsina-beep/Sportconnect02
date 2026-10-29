@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportConnect — Find Your People</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+
+<body>
+  <main class="page">
+    <section class="welcome">
+      <a class="brand" href="#" aria-label="SportConnect home">
+        <span class="brand-mark">s.</span>
+        <span>sportconnect</span>
+      </a>
+
+      <div class="welcome-copy">
+        <p class="eyebrow">MOVE TOGETHER</p>
+        <h1>Your next <br class="headline-break">great match <br class="headline-break"><span>starts here.</span></h1>
+        <p class="intro">
+          Find people who love your sport,
+          share your pace, and make showing
+          up a little easier.
+        </p>
+      </div>
+
+      <p class="welcome-footer">Find your people. Find your rhythm.</p>
+    </section>
+
+    <section class="auth-side">
+      <div class="auth-card">
+        <p class="eyebrow">YOUR COMMUNITY AWAITS</p>
+        <h2 id="form-title">Welcome back</h2>
+        <p class="subheading" id="form-subtitle">
+          Sign in to pick up where you left off.
+        </p>
+
+        <div class="tabs" role="tablist" aria-label="Account access">
+          <button class="tab active" id="login-tab" type="button" role="tab" aria-selected="true">
+            Log in
+          </button>
+          <button class="tab" id="register-tab" type="button" role="tab" aria-selected="false">
+            Sign up
+          </button>
+        </div>
+
+        <form id="auth-form">
+          <div class="field" id="name-field" hidden>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Morgan" minlength="2">
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password"
+              placeholder="At least 8 characters" minlength="8" required>
+          </div>
+
+          <div class="field" id="confirm-field" hidden>
+            <label for="confirm-password">Confirm password</label>
+            <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password"
+              placeholder="Enter your password again">
+          </div>
+
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+
+          <button class="submit-button" id="submit-button" type="submit">Log in</button>
+        </form>
+
+        <p class="switch-copy" id="switch-copy">
+          New to SportConnect?
+          <button type="button" class="text-button" id="switch-button">Create an account</button>
+        </p>
+
+        <p class="fine-print">
+          By continuing, you agree to use SportConnect
+          respectfully and responsibly.
+        </p>
+      </div>
+
+
+      <div class="dashboard" id="dashboard" hidden>
+        <header class="dashboard-header">
+          <a class="brand" href="#" aria-label="SportConnect home">
+            <span class="brand-mark">s.</span>
+            <span>sportconnect</span>
+          </a>
+          <button class="logout-button" id="logout-button" type="button">
+            Log out
+          </button>
+        </header>
+
+        <div class="dashboard-content">
+          <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+          <h2>Hey, <span id="welcome-name">there</span>!</h2>
+          <p class="dashboard-intro">
+            Welcome to SportConnect — your place to find people
+            who share your passion for sport.
+          </p>
+
+          <div class="service-grid">
+            <button class="service-card" id="open-profile" type="button">
+              <span class="service-icon">01</span>
+              <span class="service-title">My profile</span>
+              <span class="service-description">Manage your personal details and location.</span>
+              <span class="service-link">Edit profile →</span>
+            </button>
+            <button class="service-card" id="open-sports" type="button">
+              <span class="service-icon">02</span>
+              <span class="service-title">My sports</span>
+              <span class="service-description">Choose your sports and set your skill level.</span>
+              <span class="service-link">Manage sports →</span>
+            </button>
+            <button class="service-card" id="open-activities" type="button">
+              <span class="service-icon">03</span>
+              <span class="service-title">My activities</span>
+              <span class="service-description">Plan a sport session and choose when and where.</span>
+              <span class="service-link">Manage activities →</span>
+            </button>
+            <button class="service-card" id="open-finder" type="button">
+              <span class="service-icon">04</span>
+              <span class="service-title">Find a partner</span>
+              <span class="service-description">Discover people, their sports and active plans.</span>
+              <span class="service-link">Explore partners →</span>
+            </button>
+            <button class="service-card" id="open-requests" type="button">
+              <span class="service-icon">05</span>
+              <span class="service-title">My requests</span>
+              <span class="service-description">Review invitations and track requests you've sent.</span>
+              <span class="service-link">View requests →</span>
+            </button>
+            <button class="service-card" id="open-messages" type="button">
+              <span class="service-icon">06</span>
+              <span class="service-title">Messages</span>
+              <span class="service-description">Chat with partners after they accept your request.</span>
+              <span class="service-link">Open messages →</span>
+            </button>
+          </div>
+
+          <section class="service-panel" id="profile-panel" hidden>
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">YOUR DETAILS</p>
+                <h3>My profile</h3>
+              </div>
+              <button class="text-button" id="close-profile" type="button">Close</button>
+            </div>
+            <p class="panel-help">Your street address is stored privately and isn't shown on your public profile.</p>
+            <form id="profile-form" class="service-form">
+              <div class="form-grid">
+                <div class="field profile-picture-field">
+                  <label for="profile-avatar">Profile picture</label>
+                  <div class="profile-picture-editor">
+                    <div class="profile-avatar-frame">
+                      <img id="profile-avatar-preview" alt="Profile picture preview" hidden>
+                      <span id="profile-avatar-initials" aria-hidden="true">?</span>
+                    </div>
+                    <div class="profile-picture-controls">
+                      <input id="profile-avatar" type="file" accept="image/jpeg,image/png,image/webp">
+                      <p class="field-hint">JPG, PNG or WebP · maximum 5 MB</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="profile-birthdate">Birthdate</label>
+                  <input id="profile-birthdate" type="date">
+                </div>
+                <div class="field">
+                  <label for="profile-sex">Sex</label>
+                  <select id="profile-sex">
+                    <option value="">Prefer not to say</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="profile-city">City</label>
+                  <input id="profile-city" maxlength="100" placeholder="Your city">
+                </div>
+                <div class="field">
+                  <label for="profile-street">Street</label>
+                  <input id="profile-street" maxlength="150" placeholder="Street name">
+                </div>
+                <div class="field">
+                  <label for="profile-house-number">House number</label>
+                  <input id="profile-house-number" maxlength="30" placeholder="House number">
+                </div>
+                <div class="field field-full">
+                  <label for="profile-about-me">About me <span id="profile-about-count" class="field-hint inline-hint">0 / 500</span></label>
+                  <textarea id="profile-about-me" rows="4" maxlength="500" placeholder="What do you enjoy about sport, and what kind of partner are you looking for?"></textarea>
+                </div>
+              </div>
+              <p class="message" id="profile-message" role="status" aria-live="polite"></p>
+              <button class="submit-button" id="save-profile" type="submit">Save profile</button>
+            </form>
+          </section>
+
+          <section class="service-panel" id="sports-panel" hidden>
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">YOUR ACTIVITIES</p>
+                <h3>My sports</h3>
+              </div>
+              <button class="text-button" id="close-sports" type="button">Close</button>
+            </div>
+            <p class="panel-help">Choose a sport from the catalogue and select the level that best describes you.</p>
+            <form id="sports-form" class="service-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="sport-choice">Sport</label>
+                  <select id="sport-choice" required>
+                    <option value="">Loading sports…</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="sport-level">Your level</label>
+                  <select id="sport-level" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="pro">Pro</option>
+                  </select>
+                </div>
+              </div>
+              <p class="message" id="sports-message" role="status" aria-live="polite"></p>
+              <button class="submit-button" id="add-sport" type="submit">Add sport</button>
+            </form>
+            <div id="my-sports-list" class="my-sports-list">
+              <p class="panel-help">Your saved sports will appear here.</p>
+            </div>
+          </section>
+
+          <section class="service-panel" id="activities-panel" hidden>
+            <div class="panel-heading">
+              <div><p class="eyebrow">PLAN YOUR NEXT SESSION</p><h3 id="activities-heading">My activities</h3></div>
+              <button class="text-button" id="close-activities" type="button">Close</button>
+            </div>
+            <p class="panel-help">Choose one of your sports, a schedule and a preferred location. Your default skill level comes from My sports.</p>
+            <form id="activities-form" class="service-form">
+              <div class="form-grid">
+                <div class="field"><label for="activity-sport">Sport</label><select id="activity-sport" required><option value="">Loading your sports…</option></select></div>
+                <div class="field"><label for="activity-level">Your level for this activity</label><select id="activity-level" required><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="pro">Pro</option></select></div>
+                <div class="field"><label for="activity-frequency">How often?</label><select id="activity-frequency" required><option value="once">One-time activity</option><option value="weekly">Every week</option><option value="flexible">Flexible</option></select></div>
+                <div class="field" id="activity-date-field"><label for="activity-date">Activity date</label><input id="activity-date" type="date"></div>
+                <div class="field" id="activity-weekday-field" hidden><label for="activity-weekday">Day of the week</label><select id="activity-weekday"><option value="">Choose a day</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select></div>
+                <div class="field"><label for="activity-start-time">Start time (optional)</label><input id="activity-start-time" type="time"></div>
+                <div class="field"><label for="activity-end-time">End time (optional)</label><input id="activity-end-time" type="time"></div>
+                <div class="field"><label for="activity-location-type">Preferred location</label><select id="activity-location-type" required><option value="gym">Registered gym</option><option value="public">Public place / area</option><option value="flexible">Decide together later</option></select></div>
+                <div class="field" id="activity-gym-field"><label for="activity-gym">Gym</label><select id="activity-gym"><option value="">Loading gyms…</option></select></div>
+                <div class="field" id="activity-location-text-field" hidden><label for="activity-location-text">Public place or area</label><input id="activity-location-text" maxlength="200" placeholder="e.g. a park or sports ground"></div>
+              </div>
+              <p class="message" id="activities-message" role="status" aria-live="polite"></p>
+              <div class="activity-form-actions"><button class="submit-button" id="save-activity" type="submit">Save activity</button><button class="text-button" id="cancel-activity-edit" type="button" hidden>Cancel edit</button></div>
+            </form>
+            <div id="my-activities-list" class="my-sports-list"><p class="panel-help">Your saved activities will appear here.</p></div>
+          </section>
+
+          <section class="service-panel" id="finder-panel" hidden>
+            <div class="panel-heading">
+              <div><p class="eyebrow">MEET YOUR SPORT PEOPLE</p><h3>Find a partner</h3></div>
+              <button class="text-button" id="close-finder" type="button">Close</button>
+            </div>
+            <p class="panel-help">Browse people by their active sports plans. Their personal introduction helps you get to know them, too.</p>
+            <form id="finder-form" class="service-form finder-filters">
+              <div class="form-grid">
+                <div class="field"><label for="finder-sport">Sport</label><select id="finder-sport"><option value="">All sports</option></select></div>
+                <div class="field"><label for="finder-level">Activity level</label><select id="finder-level"><option value="">All levels</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="pro">Pro</option></select></div>
+                <div class="field"><label for="finder-city">City or area</label><input id="finder-city" type="text" maxlength="100" placeholder="e.g. Budapest"></div>
+                <div class="field"><label for="finder-search">Search people or interests</label><input id="finder-search" type="search" maxlength="100" placeholder="Name, bio or sport"></div>
+              </div>
+              <div class="finder-filter-actions"><button class="submit-button" type="submit">Apply filters</button><button class="text-button" id="finder-reset" type="button">Clear filters</button></div>
+            </form>
+            <p class="message" id="finder-message" role="status" aria-live="polite"></p>
+            <div id="finder-results" class="finder-results"><p class="panel-help">Loading partner profiles…</p></div>
+          </section>
+
+          <section class="service-panel" id="requests-panel" hidden>
+            <div class="panel-heading">
+              <div><p class="eyebrow">YOUR SPORT CONNECTIONS</p><h3>My requests</h3></div>
+              <button class="text-button" id="close-requests" type="button">Close</button>
+            </div>
+            <p class="panel-help">Requests you receive can be accepted or rejected. Requests you send stay here so you can follow their status.</p>
+            <p class="message" id="requests-message" role="status" aria-live="polite"></p>
+            <div class="requests-columns">
+              <section class="request-group" aria-labelledby="incoming-requests-heading">
+                <h4 id="incoming-requests-heading">Received requests</h4>
+                <div id="incoming-requests" class="request-list"><p class="panel-help">Loading received requests…</p></div>
+              </section>
+              <section class="request-group" aria-labelledby="sent-requests-heading">
+                <h4 id="sent-requests-heading">Sent requests</h4>
+                <div id="sent-requests" class="request-list"><p class="panel-help">Loading sent requests…</p></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="service-panel" id="messages-panel" hidden>
+            <div class="panel-heading">
+              <div><p class="eyebrow">KEEP IN TOUCH</p><h3>Messages</h3></div>
+              <button class="text-button" id="close-messages" type="button">Close</button>
+            </div>
+            <p class="panel-help">You can message each other after a partner request is accepted. Each accepted request has its own conversation.</p>
+            <p class="message" id="messages-status" role="status" aria-live="polite"></p>
+            <div class="messages-layout">
+              <aside class="conversation-sidebar" aria-label="Accepted partners">
+                <h4>Accepted partners</h4>
+                <div id="conversation-list" class="conversation-list">
+                  <p class="panel-help">Loading accepted partners…</p>
+                </div>
+              </aside>
+              <section class="conversation-thread" aria-label="Chat conversation">
+                <div id="conversation-placeholder" class="conversation-placeholder">
+                  <span class="conversation-placeholder-mark">s.</span>
+                  <strong>Choose a conversation</strong>
+                  <p>Your chats with accepted partners will appear here.</p>
+                </div>
+                <div id="active-conversation" hidden>
+                  <header class="conversation-header">
+                    <div>
+                      <h4 id="conversation-partner-name">Partner</h4>
+                      <p id="conversation-subtitle" class="panel-help"></p>
+                    </div>
+                    <button class="text-button" id="refresh-conversation" type="button">Refresh</button>
+                  </header>
+                  <div id="conversation-messages" class="conversation-messages" role="log" aria-live="polite" aria-relevant="additions text">
+                    <p class="panel-help">Choose a partner to load messages.</p>
+                  </div>
+                  <form id="chat-form" class="chat-form">
+                    <label for="chat-message-input">Your message</label>
+                    <textarea id="chat-message-input" rows="3" maxlength="2000" placeholder="Write a message…" required></textarea>
+                    <div class="chat-form-footer">
+                      <span class="field-hint">Be kind and respectful.</span>
+                      <button class="submit-button" id="send-chat-message" type="submit">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <p class="dashboard-note">
+            Your pace. Your people. Your community.
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>

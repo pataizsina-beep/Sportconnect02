@@ -1,0 +1,152 @@
+
+.admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 24px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-content {
+  max-width: 760px;
+  margin: 44px auto;
+}
+
+.admin-title {
+  margin: 12px 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(34px, 5vw, 48px);
+  letter-spacing: -1.5px;
+}
+
+.admin-description,
+.hint {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.admin-panel {
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+}
+
+.admin-panel h2,
+.gym-list-section h2 {
+  margin-top: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+}
+
+#gym-form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#gym-form input,
+#gym-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+#gym-form input:focus,
+#gym-form select:focus {
+  outline: 2px solid var(--soft-green);
+  border-color: var(--green);
+}
+
+#gym-sports option {
+  padding: 8px;
+}
+
+.hint {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  flex: 1;
+}
+
+.gym-list-section {
+  margin-top: 42px;
+}
+
+.gym-list {
+  display: grid;
+  gap: 14px;
+}
+
+.gym-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.gym-card h3 {
+  margin: 0 0 8px;
+  font-family: "Manrope", sans-serif;
+}
+
+.gym-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gym-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.gym-card-actions button {
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.gym-card-actions button:hover {
+  background: var(--soft-green);
+}
+
+.gym-card-actions .delete-button {
+  color: #a34338;
+}
+
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 18px 14px;
+  }
+
+  .admin-panel {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
